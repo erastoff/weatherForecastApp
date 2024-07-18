@@ -1,6 +1,6 @@
 from django.urls import path
 
-from api.views import index
+from api.views import index, autocomplete_city
 
 app_name = "api"
 
@@ -10,4 +10,5 @@ urlpatterns = [
         index,
         name="index",
     ),
+    path("autocomplete/", autocomplete_city, name="autocomplete_city"),
 ]
