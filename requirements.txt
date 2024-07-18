@@ -8,8 +8,10 @@ charset-normalizer==3.3.2
 click==8.1.7
 Django==5.0.7
 exceptiongroup==1.2.2
+flake8==7.1.0
 flatbuffers==24.3.25
 idna==3.7
+mccabe==0.7.0
 mypy-extensions==1.0.0
 numpy==2.0.0
 openmeteo_requests==1.2.0
@@ -18,9 +20,11 @@ packaging==24.1
 pandas==2.2.2
 pathspec==0.12.1
 platformdirs==4.2.2
+pycodestyle==2.12.0
 pydantic==2.8.2
 pydantic-settings==2.3.4
 pydantic_core==2.20.1
+pyflakes==3.2.0
 python-dateutil==2.9.0.post0
 python-decouple==3.8
 python-dotenv==1.0.1
