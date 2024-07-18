@@ -1,5 +1,6 @@
 [flake8]
 exclude =
-    migrations, venv, appsinstalled_pb2.py
+    migrations, venv
+ignore = F401
 
 max-line-length = 120
