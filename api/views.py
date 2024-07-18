@@ -30,4 +30,6 @@ def index(request):
                     )
             else:
                 weather_data = {"error": "Invalid city provided"}
+        else:
+            weather_data = {"error": "City is not provided"}
     return render(request, "index.html", {"weather_data": weather_data})
