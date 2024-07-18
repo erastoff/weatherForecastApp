@@ -1,9 +1,7 @@
-# api/tests.py
-
 from django.test import TestCase, Client
 from django.urls import reverse
-from unittest.mock import patch, MagicMock
-from api.views import fetch_geocode, get_om_response
+from unittest.mock import patch
+from api.views import fetch_geocode
 import pandas as pd
 
 
