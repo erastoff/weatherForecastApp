@@ -1,6 +1,6 @@
 import json
 import logging
-
+import requests
 from django.http import JsonResponse
 from django.shortcuts import render
 

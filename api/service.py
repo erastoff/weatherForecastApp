@@ -1,6 +1,5 @@
 import logging
 
-import numpy
 import requests
 import openmeteo_requests
 import requests_cache
@@ -134,16 +133,6 @@ def get_om_response(lat, lon):
                 "rain_sum": 1,
             }
         )
-    )
-    # print(daily_dataframe)
-    print(
-        daily_dataframe[
-            [
-                "temperature_2m_max",
-                "temperature_2m_min",
-                "precipitation_probability_mean",
-            ]
-        ]
     )
     return daily_dataframe
 
