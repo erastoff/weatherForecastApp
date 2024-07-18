@@ -22,9 +22,9 @@ This is a Django-based web application for checking the weather forecast. Users 
 ### Running
 After clonning these repo use these simple Docker commands:
 
-<u>docker build -t my_django_app .</u>         - build image in Docker 
+<u>docker build -t my_django_app .</u>         (build image in Docker)
 
-<u>docker run -p 8000:8000 my_django_app</u>         - run docker image with app using port 8000 
+<u>docker run -p 8000:8000 my_django_app</u>         (run Docker image with app using port 8000)
 
 Check the weather on localhost:8000
 
