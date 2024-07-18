@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Прогноз погоды</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: center; /* Центрирование текста в ячейках */
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Прогноз погоды</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="city">Введите город:</label>
+        <input type="text" id="city" name="city">
+        <button type="submit">Поиск</button>
+    </form>
+<br>
+    <div id="weather-info">
+        {% if weather_data %}
+            {% if weather_data.error %}
+                <p>{{ weather_data.error }}</p>       
+            {% else %}
+                <table border="1">
+                    <tr>
+                        <th>Дата</th>
+                        <th>Макс. температура (°C)</th>
+                        <th>Мин. температура (°C)</th>
+                        <th>Вероятность осадков (%)</th>
+                        <th>Сумма осадков (мм)</th>
+                        <th>Макс. скорость ветра (м/с)</th>
+                        <th>Описание погоды</th>
+                    </tr>
+                    {% for entry in weather_data %}
+                        <tr>
+                            <td>{{ entry.date }}</td>
+                            <center><td>{{ entry.temperature_2m_max }}</td></center>
+                            <td>{{ entry.temperature_2m_min }}</td>
+                            <td>{{ entry.precipitation_probability_mean }}</td>
+                            <td>{{ entry.rain_sum }}</td>
+                            <td>{{ entry.wind_speed_10m_max }}</td>
+                            <td>{{ entry.weather_description }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>
